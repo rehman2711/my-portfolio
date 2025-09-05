@@ -1,26 +1,55 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+.bubble {
+  width: 305px;
+  height: 300px;
+  border-radius: 85% 70% 78% 73%;
+  /* this above color is background */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  
+     border: 4px solid white;
+  
+  /* Center image and clip it within the bubble */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  
+  /* Rotate the bubble around the centered image */
+  animation: rotate 10s linear infinite forwards;
+  
+  } @keyframes rotate {
+  
+  0% {
+  
+  transform: rotate(0deg);
+  
+  } 100% {
+  
+  transform: rotate(360deg);
+  
   }
-}
+  
+  }
+  
+  /* Keep the image centered and inside the bubble; counter-rotate to stay upright */
+  .bubble-img {
+    width: 100%;
+    height: 100%;
+    scale: 105%;
+    object-fit: cover;
+  /* border: 2px solid white; */
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+    border-radius: 42%;
+    animation: rotateReverse 10s linear infinite forwards;
+  }
+  
+  @keyframes rotateReverse {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  
