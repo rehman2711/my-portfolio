@@ -21,6 +21,7 @@ export default function HomePage() {
         {/* Social Links */}
         <div className="flex gap-4 mb-8">
           <span>
+            <a href="https://www.linkedin.com/in/rehmankalawant/" target="_blank">
             <Image
               src="/linkedin.svg"
               alt="html"
@@ -28,8 +29,10 @@ export default function HomePage() {
               height={28}
               className="h-7 w-7 rounded-lg"
             />
+            </a>
           </span>
           <span>
+          <a href="https://github.com/rehman2711" target="_blank">
             <Image
               src="/github.webp"
               alt="html"
@@ -37,6 +40,7 @@ export default function HomePage() {
               height={28}
               className="h-7 w-7 rounded-lg"
             />
+            </a>
           </span>
         </div>
 
